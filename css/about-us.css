@@ -1,0 +1,87 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.8;
+}
+/* Purpose cards */
+.purpose-card {
+    background: #f8f9fa; /* light background */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.purpose-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.purpose-card i {
+    font-size: 28px;
+}
+
+/* Call button */
+.call-btn {
+    font-weight: 600;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.call-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Responsive tweaks */
+@media (max-width: 991.98px) {
+    .purpose-card {
+        justify-content: center;
+    }
+    .purpose-card i {
+        margin-bottom: 0;
+    }
+}
+
+.timeline-step {
+    position: relative;
+    padding-left: 3rem;
+    border-left: 3px solid #a1cd5e; /* subtle left line */
+}
+
+.timeline-icon {
+    position: absolute;
+    left: -1.3rem;
+    top: 0;
+    background: #262161;
+    color: #fff;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.timeline-step h5 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-family: montserrat, sans-serif;
+}
+
+.timeline-step p {
+    color: #555;
+    margin-bottom: 0;
+}
+
+/* Mobile adjustments: stack columns */
+@media (max-width: 767px) {
+    .timeline-step {
+        padding-left: 2.5rem;
+        border-left: 3px solid #0d6efd20;
+    }
+    .timeline-icon {
+        left: -1rem;
+    }
+}
