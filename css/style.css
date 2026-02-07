@@ -568,17 +568,22 @@ body {
 
 .cta-section {
     background: linear-gradient(
-        rgba(13, 110, 253, 0.95),
-        rgba(13, 110, 253, 0.95)
+     
+        #262161
+       
     ),
-    url("img/cta-bg.jpg") center / cover no-repeat;
+    url("../img/about\ \(5\).jpg") center / cover no-repeat;
     color: #ffffff;
+
+
+
+
 }
 
 .cta-section h6 {
     letter-spacing: 0.15em;
     font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.75);
+    color: #fff
 }
 
 .cta-section p {
