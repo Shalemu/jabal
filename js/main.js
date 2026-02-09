@@ -90,25 +90,7 @@
     });
 
 
-    // Testimonials carousel
-    $(".testimonial-carousel").owlCarousel({
-        autoplay: false,
-        smartSpeed: 1000,
-        center: true,
-        dots: true,
-        loop: true,
-        responsive: {
-            0:{
-                items:1
-            },
-            768:{
-                items:2
-            },
-            992:{
-                items:3
-            }
-        }
-    });
+
     
 })(jQuery);
 
@@ -132,31 +114,63 @@ $('.navbar a[href^="#"]').on('click', function (e) {
 
 
 $(window).on('scroll', function () {
+
     let scrollPos = $(document).scrollTop() + 120;
 
-    $('.navbar-nav a[href^="#"]').each(function () {
-        let currLink = $(this);
-        let refElement = $(currLink.attr("href"));
+    $('.navbar-nav a').removeClass('active');
 
-        if (refElement.length) {
-            if (
-                refElement.position().top <= scrollPos &&
-                refElement.position().top + refElement.height() > scrollPos
-            ) {
-                $('.navbar-nav a').removeClass("active");
-                currLink.addClass("active");
-            }
+    /* ===== HOME ===== */
+    if ($('#home').length) {
+        let top = $('#home').offset().top;
+        let bottom = top + $('#home').outerHeight();
+
+        if (scrollPos >= top && scrollPos < bottom) {
+            $('a[href="#home"]').addClass('active');
+            return;
         }
-    });
-
-    // Make SERVICES active for related sections
-    if (
-        $('#services').position().top <= scrollPos &&
-        $('#scope').position().top + $('#scope').height() > scrollPos
-    ) {
-        $('.navbar-nav a').removeClass("active");
-        $('#servicesMenu').addClass("active");
     }
+
+    /* ===== ABOUT ===== */
+    if ($('#about').length) {
+        let top = $('#about').offset().top;
+        let bottom = top + $('#about').outerHeight();
+
+        if (scrollPos >= top && scrollPos < bottom) {
+            $('a[href="#about"]').addClass('active');
+            return;
+        }
+    }
+
+    /* ===== SERVICES ===== */
+    if ($('#services').length) {
+        let top = $('#services').offset().top;
+        let bottom = top + $('#services').outerHeight();
+
+        if (scrollPos >= top && scrollPos < bottom) {
+            $('#servicesMenu').addClass('active');
+            return;
+        }
+    }
+
+    /* ===== SCOPE & OPERATIONS (GROUP) ===== */
+    let scopeStart = $('#scope').offset().top;
+    let scopeEnd = $('#partner').offset().top + $('#partner').outerHeight();
+
+    if (scrollPos >= scopeStart && scrollPos < scopeEnd) {
+        $('a[href="#scope"]').addClass('active');
+        return;
+    }
+
+    /* ===== CONTACT ===== */
+    if ($('#contact').length) {
+        let top = $('#contact').offset().top;
+        let bottom = top + $('#contact').outerHeight();
+
+        if (scrollPos >= top && scrollPos < bottom) {
+            $('a[href="#contact"]').addClass('active');
+        }
+    }
+
 });
 
 
